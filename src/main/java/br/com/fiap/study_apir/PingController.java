@@ -5,12 +5,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("raiz")
 public class PingController {
 
-    @GetMapping("/ping")
+    @GetMapping("ping")
     public String ping(){
         return "pong";
+    }
+
+    
+    @GetMapping("/rota")
+    public String rota1(){
+        return "rota";
     }
 
 }
