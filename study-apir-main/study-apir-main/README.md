@@ -2,8 +2,8 @@
 
 API de estudo de Spring Boot.
 
-##Intruções 
+## Instruções de uso
 
-``` 
+```
 mvn spring-boot:run
 ```
