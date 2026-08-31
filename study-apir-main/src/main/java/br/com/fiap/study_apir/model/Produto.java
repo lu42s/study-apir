@@ -2,17 +2,56 @@ package br.com.fiap.study_apir.model;
 
 import java.math.BigDecimal;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Getter
-@Setter
-@RequiredArgsConstructor
+@Entity
+@Table(name = "produtos")
 public class Produto {
-    private final Long id;
-    private final String nome;
-    private final BigDecimal valor;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String nome;
+    private BigDecimal valor;
+
+    public Produto(Long id, String nome, BigDecimal valor) {
+        this.id = id;
+        this.nome = nome;
+        this.valor = valor;
+    }
+
+    public Produto() {
+    }
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+
+
+    
 }
